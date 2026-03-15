@@ -1,0 +1,361 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background: radial-gradient(circle at top, rgba(76, 175, 80, 0.15), transparent 55%),
+                radial-gradient(circle at bottom, rgba(0, 123, 255, 0.12), transparent 55%),
+                linear-gradient(135deg, #f4f4f4 0%, #e8f2ff 100%);
+    min-height: 100vh;
+}
+
+header {
+    background: linear-gradient(135deg, #4CAF50, #0D47A1);
+    color: white;
+    padding: 1.5em 0;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+}
+
+.header-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 1.5em;
+    flex-wrap: wrap;
+    padding: 0 1em;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.logo {
+    width: 85px;
+    height: 85px;
+    border-radius: 14px;
+    background: rgba(255,255,255,0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgba(255,255,255,0.5);
+}
+
+.logo-text {
+    font-size: 1.2rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.header-text {
+    text-align: left;
+    max-width: 720px;
+}
+
+header h1 {
+    margin: 0;
+    transition: color 0.3s;
+}
+
+header h1:hover {
+    color: #4CAF50;
+}
+
+header p {
+    margin: 0.5em 0;
+}
+
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2em 1.25em 3em;
+}
+
+.welcome-section {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 2em;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    margin-bottom: 2em;
+}
+
+.welcome-inner h2 {
+    margin-top: 0;
+    color: #0b3d91;
+}
+
+.welcome-inner p {
+    line-height: 1.6;
+    color: #333;
+}
+
+.regulations {
+    margin-bottom: 2em;
+}
+
+.regulations h2 {
+    text-align: center;
+    margin-bottom: 1.25em;
+    color: #0b3d91;
+}
+
+.regulation-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+}
+
+@media (min-width: 860px) {
+    .regulation-grid {
+        flex-direction: row;
+    }
+}
+
+.content-area {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+    overflow: hidden;
+}
+
+.content-inner {
+    padding: 2em;
+}
+
+.content-inner h2 {
+    margin-top: 0;
+    color: #0b3d91;
+}
+
+.content-inner p {
+    line-height: 1.6;
+    color: #333;
+}
+
+
+
+.sidebar {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 1.5em;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.sidebar h2 {
+    margin-top: 0;
+    text-align: center;
+    color: #4CAF50;
+}
+
+.sidebar-hint {
+    margin-top: 1.5em;
+    font-size: 0.95rem;
+    color: #555;
+    text-align: center;
+}
+
+.content-area {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    height: 600px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.content-area iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+#regulations h2 {
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+.regulation-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+.regulation-box {
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 12px;
+    padding: 1.5em;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.12);
+    transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+    backdrop-filter: blur(12px);
+}
+
+.regulation-box:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.16);
+}
+
+.regulation-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75em;
+    margin-bottom: 0.5em;
+}
+
+.regulation-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    font-weight: bold;
+    color: white;
+    background: rgba(76, 175, 80, 0.9);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.12);
+}
+
+.r23 .regulation-badge {
+    background: linear-gradient(135deg, #4CAF50, #1B5E20);
+}
+
+.r24 .regulation-badge {
+    background: linear-gradient(135deg, #2196F3, #0D47A1);
+}
+
+.regulation-box h3 {
+    margin: 0;
+    font-size: 1.25rem;
+    color: #222;
+}
+
+.regulation-desc {
+    margin: 0.5em 0 1em;
+    color: #444;
+    text-align: center;
+}
+
+.branches-flex {
+    display: flex;
+    justify-content: space-around;
+    gap: 1em;
+    flex-wrap: wrap;
+}
+
+.branch-link {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    padding: 1em 2em;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.25s, transform 0.25s, box-shadow 0.25s;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+}
+
+.r23 .branch-link {
+    background-color: #43a047;
+}
+
+.r23 .branch-link:hover {
+    background-color: #388e3c;
+}
+
+.r24 .branch-link {
+    background-color: #1e88e5;
+}
+
+.r24 .branch-link:hover {
+    background-color: #1565c0;
+}
+
+.branch-link:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.16);
+}
+
+footer {
+    background: #000;
+    color: #fff;
+    text-align: center;
+    padding: 1.25em 1em;
+    font-size: 0.95rem;
+}
+
+footer p {
+    margin: 0;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 1em;
+    color: white;
+    text-decoration: none;
+    background-color: #333;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+}
+
+.back-link:hover {
+    background-color: #555;
+}
+
+#years {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+.year-block {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5em;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.year-block h2 {
+    margin-top: 0;
+    color: #4CAF50;
+    text-align: center;
+}
+
+.semesters-flex {
+    display: flex;
+    justify-content: space-around;
+    gap: 1em;
+    flex-wrap: wrap;
+}
+
+.semester-box {
+    flex: 1;
+    min-width: 200px;
+    background-color: #f9f9f9;
+    padding: 1em;
+    border-radius: 5px;
+}
+
+.semester-box h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+.semester-box ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.semester-box ul li {
+    margin-bottom: 0.5em;
+}
+
+.semester-box ul li a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+.semester-box ul li a:hover {
+    text-decoration: underline;
+}
