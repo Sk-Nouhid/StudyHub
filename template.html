@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources | Study Hub</title>
+    <link rel="stylesheet" href="substyle.css">
+</head>
+<body>
+
+    <header class="sub-header">
+        <div class="header-content">
+            <a href="home page.html" class="btn-home">← Back to Home</a>
+            <h1 id="main-title">Loading Resources...</h1>
+        </div>
+    </header>
+
+    <main class="semester-container">
+        <!-- Semester 1 Box -->
+        <div class="semester-box">
+            <div class="sem-header">
+                <span class="sem-badge">01</span>
+                <h2>Semester 1</h2>
+            </div>
+            <div id="sem1-list" class="subject-list"></div>
+        </div>
+
+        <!-- Semester 2 Box -->
+        <div class="semester-box">
+            <div class="sem-header">
+                <span class="sem-badge">02</span>
+                <h2>Semester 2</h2>
+            </div>
+            <div id="sem2-list" class="subject-list"></div>
+        </div>
+    </main>
+
+    <!-- Connect the Data File -->
+    <script src="data.js"></script>
+
+    <script>
+        // 1. Get the ID from the URL (e.g., template.html?page=aids-r23-1)
+        const params = new URLSearchParams(window.location.search);
+        const pageId = params.get('page');
+
+        // 2. Find the data in data.js
+        const data = branchData[pageId];
+
+        if (data) {
+            // Update Title
+            document.getElementById('main-title').innerText = data.title;
+
+            // Function to create a group of links (Notes, Materials, etc)
+            function createLinkGroup(title, items) {
+                if (!items || items.length === 0) return ""; 
+                
+                const linksHTML = items.map(item => 
+                    `<a href="${item.url}" class="resource-item" target="_blank">${item.label}</a>`
+                ).join('');
+
+                return `
+                    <div class="resource-group">
+                        <h4>${title}</h4>
+                        <div class="resource-links-grid">
+                            ${linksHTML}
+                        </div>
+                    </div>
+                `;
+            }
+
+            // Function to create the Subject button and Drawer
+            function createSubjectHTML(subject, index, semPrefix) {
+                const id = `${semPrefix}-subj-${index}`;
+                return `
+                    <div class="subject-wrapper">
+                        <button class="subject-btn" onclick="toggleSubject('${id}')">
+                            ${subject.name}
+                            <span class="plus-icon">+</span>
+                        </button>
+                        <div id="${id}" class="subject-content">
+                            ${createLinkGroup("📝 Notes", subject.notes)}
+                            ${createLinkGroup("📚 Materials", subject.materials)}
+                            ${createLinkGroup("🔗 Online Links", subject.links)}
+                        </div>
+                    </div>
+                `;
+            }
+
+            // Inject the HTML into the page
+            document.getElementById('sem1-list').innerHTML = data.sem1.map((s, i) => createSubjectHTML(s, i, 's1')).join('');
+            document.getElementById('sem2-list').innerHTML = data.sem2.map((s, i) => createSubjectHTML(s, i, 's2')).join('');
+        } else {
+            document.getElementById('main-title').innerText = "Page Not Found";
+        }
+
+        // Toggle Subject Drawers
+        function toggleSubject(id) {
+            const content = document.getElementById(id);
+            const isVisible = content.style.display === "block";
+            
+            // Close all other subjects
+            document.querySelectorAll('.subject-content').forEach(el => {
+                el.style.display = 'none';
+                el.previousElementSibling.classList.remove('active');
+            });
+            
+            // Open this one if it was closed
+            if (!isVisible) {
+                content.style.display = "block";
+                content.previousElementSibling.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>

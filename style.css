@@ -1,48 +1,123 @@
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Arial, sans-serif;
     margin: 0;
     padding: 0;
     color: #333;
-    background: radial-gradient(circle at top, rgba(76, 175, 80, 0.15), transparent 55%),
-                radial-gradient(circle at bottom, rgba(0, 123, 255, 0.12), transparent 55%),
-                linear-gradient(135deg, #f4f4f4 0%, #e8f2ff 100%);
+    background: linear-gradient(90deg, #cdfd85, #7ac6ef);
     min-height: 100vh;
 }
 
 header {
-    background: linear-gradient(135deg, #4CAF50, #0D47A1);
+    background: linear-gradient(135deg, #1b5e20, #0d47a1);
     color: white;
-    padding: 1.5em 0;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+    padding: 0.5em 0.5em;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
-
 .header-top {
     display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 1.5em;
+    align-items: center;
+    justify-content: left;
+    gap: 1em;
     flex-wrap: wrap;
-    padding: 0 1em;
-    max-width: 1100px;
+    padding: 0.5em 1em;
+    
     margin: 0 auto;
 }
-
 .logo {
-    width: 85px;
-    height: 85px;
-    border-radius: 14px;
-    background: rgba(255,255,255,0.25);
+    width: auto;
+    height:60px;
+    border-radius: 5px;
+    background: linear-gradient(170deg,#29c8de,#37ed46);
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: left;
     border: 2px solid rgba(255,255,255,0.5);
+    transition: background 0.3s, border 0.3s;
+    max-width: 1300px;
 }
 
 .logo-text {
-    font-size: 1.2rem;
+    
+    color: rgb(255, 255, 254);
+    border-radius: 50px;
+    font-size: 13px;
     font-weight: bold;
+    padding: 0.4em 0.5em;
     letter-spacing: 1px;
+    height: -40px;
+    text-align: center;
+    background: linear-gradient(170deg, #7cf780, #5ed6f7);
+    
 }
+
+
+.search-container {
+    position: relative;
+    max-width: 500px; /* Increased from 360px */
+    margin: 1.5rem auto 0;
+}
+
+#searchInput {
+    width: 100%;
+    padding: 1em 1.2em 1em 3em; /* Increased padding */
+    border-radius: 999px;
+    border: none;
+    font-size: 1.1rem; /* Increased font-size */
+    outline: none;
+    background: white url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23999' d='M15.5 14h-.79l-.28-.27a6.471 6.471 0 0 0 1.48-5.34C15.14 5.09 12.05 2 8.5 2S1.86 5.09 1.86 8.39c0 3.3 3.09 6.39 6.64 6.39 1.61 0 3.09-.59 4.23-1.56l.27.28v.79l4.99 4.99c.39.39 1.02.39 1.41 0s.39-1.02 0-1.41L15.5 14zM8.5 13c-2.58 0-4.64-2.06-4.64-4.61C3.86 5.81 5.92 3.75 8.5 3.75S13.14 5.81 13.14 8.39C13.14 10.94 11.08 13 8.5 13z'/%3E%3C/svg%3E") no-repeat 14px center;
+    background-size: 20px 20px; /* Slightly larger icon */
+}
+
+.search-suggestions {
+    position: absolute;
+    top: calc(100% + 0.35em);
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    box-shadow: 0 10px 18px rgba(0,0,0,0.15);
+    list-style: none;
+    margin: 0;
+    padding: 0.4em 0;
+    max-height: 240px;
+    overflow-y: auto;
+    z-index: 10;
+    display: none;
+    color: #000;
+}
+
+.search-suggestions:not([hidden]) {
+    display: block;
+}
+
+.search-suggestions li {
+    padding: 0.65em 0.9em;
+    cursor: pointer;
+    font-size: 0.95rem;
+    color: #000;
+}
+
+.search-suggestions li.no-results {
+    cursor: default;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.search-suggestions li:hover,
+.search-suggestions li[aria-selected="true"] {
+    background: rgba(76, 175, 80, 0.15);
+}
+
+.search-suggestions[hidden] {
+    display: none;
+}
+
+
+
+
+
+
 
 .header-text {
     text-align: left;
@@ -72,41 +147,35 @@ main {
     background: rgba(255, 255, 255, 0.1);
     border-radius: 16px;
     padding: 2em;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
     margin-bottom: 2em;
-}
-
-.welcome-inner h2 {
-    margin-top: 0;
-    color: #0b3d91;
-}
-
-.welcome-inner p {
-    line-height: 1.6;
-    color: #333;
-}
-
-.regulations {
-    margin-bottom: 2em;
-}
-
-.regulations h2 {
+    content-align: center;
     text-align: center;
-    margin-bottom: 1.25em;
-    color: #0b3d91;
 }
 
-.regulation-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5em;
+
+.welcome-section h2 {
+    margin-top: 0;/*welcome to Study Hub*/
+    color:rgba(21, 21, 172, 0.726);
+    
+    margin: 0 auto;
+    font-size: 50px; 
+    text-align: center;
+    line-height: 10px;
+    padding-top: 50px;;
 }
 
-@media (min-width: 860px) {
-    .regulation-grid {
-        flex-direction: row;
-    }
+.welcome-desc{
+    font-size: 1.2em;
+    color: #4f3b9c;
+    margin: 0.5em 0;
+    text-align: center;
 }
+
+.welcome-section .subtitle {
+  font-size: 44px;
+}
+
+
 
 .content-area {
     background: rgba(255, 255, 255, 0.9);
@@ -124,14 +193,6 @@ main {
     margin-top: 0;
     color: #0b3d91;
 }
-
-.content-inner p {
-    line-height: 1.6;
-    color: #333;
-}
-
-
-
 .sidebar {
     background: white;
     border: 1px solid #ddd;
@@ -168,9 +229,15 @@ main {
     border: none;
 }
 
-#regulations h2 {
-    text-align: center;
+.regulations {
     margin-bottom: 2em;
+    width: 100%;
+}
+
+.regulations h2 {
+    text-align: center;
+    margin-bottom: 1.25em;
+    color: #0b3d91;
 }
 
 .regulation-container {
@@ -183,10 +250,11 @@ main {
     background-color: rgba(255, 255, 255, 0.15);
     border: 1px solid rgba(0, 0, 0, 0.12);
     border-radius: 12px;
-    padding: 1.5em;
+    padding: 1.5em 3.5em;
     box-shadow: 0 4px 18px rgba(0,0,0,0.12);
     transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
     backdrop-filter: blur(12px);
+
 }
 
 .regulation-box:hover {
@@ -219,7 +287,7 @@ main {
     background: linear-gradient(135deg, #4CAF50, #1B5E20);
 }
 
-.r24 .regulation-badge {
+.r25 .regulation-badge {
     background: linear-gradient(135deg, #2196F3, #0D47A1);
 }
 
@@ -237,23 +305,111 @@ main {
 
 .branches-flex {
     display: flex;
-    justify-content: space-around;
-    gap: 1em;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
     flex-wrap: wrap;
+     width: 100%;            /* Ensure the container fills its parent */
+    max-width: 500px;
+    margin: 0 auto;
 }
 
+@media (min-width: 860px) {
+    .regulation-grid {
+        display: flex;
+        flex-direction: row;
+        gap: 2em;
+        justify-content: center;
+        padding-bottom: 15px;
+    }
+}
+
+.regulation-grid {
+   
+    flex-direction: column;
+    gap: 2.5em;
+    align-items: center;
+    justify-content: center;
+}
 .branch-link {
-    display: inline-block;
-    background-color: #4CAF50;
+    
+     
     color: white;
-    padding: 1em 2em;
+    padding: 1em 2em; 
     text-decoration: none;
     border-radius: 10px;
-    font-weight: bold;
-    text-align: center;
-    transition: background-color 0.25s, transform 0.25s, box-shadow 0.25s;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+    font-weight: bold; 
+    border: none; 
+    cursor: pointer;
+    width: 100%;
+    max-width: 300px;
 }
+.branches-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+.branch-item {
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+    justify-items: center;
+    align-items: center;
+}
+
+.years-drawer {
+    justify-content: center;
+    display: none; /* Hidden by default */
+    background: #fff;
+    border: 2px solid #4CAF50;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 10px;
+    box-shadow: 0 4px 10px rgba(198, 89, 89, 0.3);
+     width: 100%;            /* Ensure the drawer is as wide as the button */
+    box-sizing: border-box;
+    min-width: 400px;
+    max-width: 400px; /* Ensure it doesn't get too narrow */
+}
+
+.years-drawer p {
+    margin: 0 0 10px 0;
+    font-weight: bold;
+    color: #0D47A1;
+}
+
+
+.years-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 10px;
+}
+
+.year-link {
+    background: #0D47A1;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 9px;
+    font-size: 0.9rem;
+    transition: 0.2s;
+}
+
+.year-link:hover {
+    background: #4CAF50;
+    transform: scale(1.05);
+}
+
+
+
+
+
+
+
 
 .r23 .branch-link {
     background-color: #43a047;
@@ -263,11 +419,11 @@ main {
     background-color: #388e3c;
 }
 
-.r24 .branch-link {
+.r25 .branch-link {
     background-color: #1e88e5;
 }
 
-.r24 .branch-link:hover {
+.r25 .branch-link:hover {
     background-color: #1565c0;
 }
 
@@ -282,6 +438,37 @@ footer {
     text-align: center;
     padding: 1.25em 1em;
     font-size: 0.95rem;
+}
+
+.footer-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-content p {
+    margin: 0;
+}
+
+.contact-info {
+    text-align: left;
+}
+
+.contact-info p {
+    margin: 0.25em 0;
+    color: #fff;
+}
+
+.contact-info a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
 }
 
 footer p {
@@ -352,10 +539,70 @@ footer p {
 }
 
 .semester-box ul li a {
-    color: #4CAF50;
-    text-decoration: none;
+    color:white;
+    text-decoration:tan;
 }
 
 .semester-box ul li a:hover {
     text-decoration: underline;
+}
+
+
+
+
+
+
+
+.back-link {
+    display: inline-block;
+    margin-top: 10px;
+    color: #fff;
+    text-decoration: none;
+    background: rgba(0,0,0,0.3);
+    padding: 5px 15px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+main {
+    max-width: 1100px;
+    margin: 2em auto;
+    padding: 0 1em;
+}
+
+.year-block {
+    background: white;
+    margin-bottom: 2em;
+    padding: 2em;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.year-block h2 {
+    color: #1b5e20;
+    border-bottom: 2px solid #f0f4ff;
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+
+
+footer {
+    background: #111;
+    color: #eee;
+    padding: 2em 1em;
+    margin-top: 4em;
+}
+
+.footer-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contact-info a {
+    color: #4CAF50;
+    text-decoration: none;
 }
