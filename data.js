@@ -5,40 +5,41 @@ const branchData = {
     "aids-r23-1": {
         title: "AIDS - 1st Year (R23)",
         sem1: [
-            { name: "Mathematics - I", notes: [{label: "Unit 1", url: "#"}, {label: "Unit 2", url: "#"}], materials: [{label: "Textbook", url: "#"}], links: [] },
-            { name: "Engineering Physics", notes: [{label: "Unit 1", url: "#"}, {label: "Unit 2", url: "#"}], materials: [{label: "Lab Manual", url: "#"}], links: [] }
+            { name: "Introduction  to C", notes: [], materials: [{label: "Unit 1", url: "https://drive.google.com/file/d/1QiL7LUtKD1dG6KDNDT2baT0EddswmOHh/view"},{label:"Unit 2",url:"https://drive.google.com/file/d/1MIEds4GPl4eZufmulZovnQ_1M83vH5Kh/view"},{label:"Unit 3",url:"https://drive.google.com/file/d/1B5PgIfaOwGoj9BnLpsLhtMoONCS9idhO/view"},{label:"Unit 4",url:"https://drive.google.com/file/d/1tb28rDFqc_T7xuOJBnfunfZ5-KlJtcL5/view"}], links: [] },
+            { name: "Chemistry", notes: [ {label: "Unit 3", url: "https://drive.google.com/file/d/1sNpNx90mDWjnEQIB8MepEW1my_P34YuI/vie"}], materials: [{label: "Unit 4", url:"https://drive.google.com/file/d/1QtvWXdNgjDJBCO8dHj55DDE1RP-F_a-i/view"},{label: "unit 2", url: "https://drive.google.com/file/d/1cbp-tImde3sQl7SDK6L-RICvnUIROGup/view"},{label: "Unit 1", url: "https://drive.google.com/file/d/1SNIyVL376w9ZUIr8XipYHydHTmcP2rrt/view?pli=1"},{label:"Unit 5",url:"https://drive.google.com/file/d/1yH9WGrM2tKe7QK6kcGRvBVKKle6yrU1O/view"}], links: [] }
         ],
         sem2: [
-            { name: "Mathematics - II", notes: [{label: "Unit 1", url: "#"}, {label: "Unit 2", url: "#"}], materials: [], links: [] },
-            { name: "Data Structures", notes: [{label: "Unit 1", url: "#"}, {label: "Unit 2", url: "#"}], materials: [{label: "Code Samples", url: "#"}], links: [] }
+            { name: "DEVC", notes: [{label: "Unit 1", url: "https://drive.google.com/file/d/1vsdit7NiPwYuiDc68KKzQVZd7wQHQqkZ/view"}, {label: "Unit 2", url: "#"}], materials: [], links: [] },
+            { name: "Data Structures", notes: [], materials: [{label: "Unit 1", url: "https://drive.google.com/file/d/1yPVdO0rNTtyyZnHoQrE7MFdWa9hsoUZF/view"},{label:"Unit 2",url:"https://drive.google.com/drive/folders/1EzYFqPq9KJutHdlAihjAXWvLHJKmanMI"}], links: [] },
+            { name:"BEEE",notes:[],materials:[{label:"Unit 1" , url:"https://drive.google.com/file/d/1SHLZVQ-rV8F9XAszxeDDGxBsD27hN3Ie/view"},{label:"unit 2",url:"https://drive.google.com/drive/folders/1mGuDoGJYQrvz_evSvKutbogjBvf50sXn"}]}
         ]
     },
     "aids-r23-2": {
         title: "AIDS - 2nd Year (R23)",
         sem1: [
-            { name: "Discrete Maths", notes: [{label: "Unit 1", url: "#"}], materials: [], links: [] },
-            { name: "Database Management", notes: [{label: "Unit 1", url: "#"}], materials: [], links: [] }
+            { name: "Discrete Maths", notes: [{label: "Unit 1", url: "https://drive.google.com/file/d/1QiL7LUtKD1dG6KDNDT2baT0EddswmOHh/view"},{label:"unit 2",url:"https://drive.google.com/drive/folders/1z1DPSPka79dmZExEJ012ZgpkFf0Qygi4"}], materials: [], links: [] },
+            { name: "Database Management", notes: [{label: "Unit 1", url: "https://drive.google.com/file/d/1xuiuaCEc-j8UWIM6pLMBZGj-Ygiv9PcJ/view"},{label:"unit 2",url:"https://drive.google.com/file/d/10ToFZKeIcyjHgZyVqSurRfYgFU2R3TNL/view"}], materials: [], links: [] }
         ],
         sem2: [
-            { name: "Operating Systems", notes: [{label: "Unit 1", url: "#"}], materials: [], links: [] },
-            { name: "AI Fundamentals", notes: [{label: "Unit 1", url: "#"}], materials: [], links: [] }
+            { name: "IDS", notes: [{label: "Unit 1", url: "https://drive.google.com/file/d/1xaxUQAgn5JRwbwClrP7LKDmt5j6VGjLp/view"},{label:"unit 2",url:"https://docs.google.com/presentation/d/1uH3bffmD9y0DpSBb97u2WTPoOxTR6fD8/edit?slide=id.p1#slide=id.p1"}], materials: [], links: [] },
+            { name: "AI", notes: [{label: "Unit 1", url: "https://drive.google.com/file/d/1Dfb2-zXNliVvT22Ib2q4lDMMf0LqnGOZ/view"},{label:"unit 2",url:"https://drive.google.com/drive/folders/1MPjw4Cwtl8_6fVBprvARJ3657n-_lRR1"}], materials: [], links: [] }
         ]
     },
     "aids-r23-3": {
         title: "AIDS - 3rd Year (R23)",
         sem1: [
-            { name: "Machine Learning", notes: [{label: "Full Notes", url: "#"}], materials: [], links: [] },
-            { name: "Computer Networks", notes: [{label: "Full Notes", url: "#"}], materials: [], links: [] }
+            { name: "Machine Learning", notes: [{label: "unit 1", url: "https://drive.google.com/file/d/1JI22ZHVTtP_ECT_qYkTCZspihI2SBZxE/view"},{label:"unit 2",url:"https://drive.google.com/file/d/1ZZuREZsHupo8txCnAOmU2GlrKSV_kV9a/view"}], materials: [], links: [] },
+            { name: "DW&DM", notes: [{label: "unit 1", url: "https://drive.google.com/drive/folders/1uMUAGxgPg2796fR8tL3wUWoCz4Pp6J1E"},{label:"unit 2",url:"https://drive.google.com/drive/folders/1GAwqk2w5IsOnrgq8zXvgqi-15grF7yAR"}], materials: [], links: [] }
         ],
         sem2: [
-            { name: "Big Data", notes: [{label: "Unit 1", url: "#"}], materials: [], links: [] },
-            { name: "Deep Learning", notes: [{label: "Unit 1", url: "#"}], materials: [], links: [] }
+            { name: "Operating Systems", notes: [{label: "Unit 1", url: "https://drive.google.com/drive/folders/1l397umeOCDUhexysEsW7-kbY-dXVioPm"},{label:"unit 2",url:"https://docs.google.com/presentation/d/1rpAP5TJPq7-1FCTpU2zRs4QB2LvZWoh4/edit?slide=id.p1#slide=id.p1"}], materials: [], links: [] },
+            { name: "Deep Learning", notes: [{label: "Unit 1", url: "https://docs.google.com/presentation/d/1GN4-j6wLXyuv7MFj_LLVjM1UoEIUlLQ1/edit?slide=id.p1#slide=id.p1"},{label:"unit 2",url:"https://docs.google.com/presentation/d/17ckPkutN0Rs0QaetUKwrkbWXa258wTZr/edit"}], materials: [], links: [] }
         ]
     },
     "aids-r23-4": {
         title: "AIDS - 4th Year (R23)",
         sem1: [
-            { name: "Cloud Computing", notes: [{label: "Unit 1", url: "#"}], materials: [], links: [] },
+            { name: "Cloud Computing", notes: [{label: "Unit 1", url: "https://drive.google.com/drive/folders/1l397umeOCDUhexysEsW7-kbY-dXVioPm"}], materials: [], links: [] },
             { name: "NLP", notes: [{label: "Unit 1", url: "#"}], materials: [], links: [] }
         ],
         sem2: [
